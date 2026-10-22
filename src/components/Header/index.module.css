@@ -1,0 +1,158 @@
+.header {
+    background: #3e050d;
+    background: radial-gradient(circle,#810f1e 0%, #3e050d 100%);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoContainer img {
+    object-fit: contain;
+}
+
+.cabecario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.ulCabecario {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #4e0b18;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 99px;
+    border: 1px solid #8b0b27;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.navButton:hover {
+    background-color: #132254;
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.icon {
+    color: #a0aec0;
+    stroke-width: 1.8px;
+}
+
+.chevron {
+    color: #a0aec0;
+    margin-left: 4px;
+}
+
+.dropbtn {
+    display: none;
+    background: none;
+    border: none;
+    color: white; 
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    
+    .header {
+        position: relative; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        min-height: 85px;
+    }
+
+    .dropbtn {
+        display: block !important;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+    }
+
+    .cabecario {
+        position: fixed !important;
+        top: 0;
+        right: -100% !important;
+        width: 260px;  
+        height: 100vh;
+        background-color: #3e050d;
+        padding-top: 100px; 
+        transition: right 0.4s ease-in-out !important;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .cabecario.menuAberto {
+        right: 0 !important;
+    }
+
+    .ulCabecario {
+        display: flex;
+        flex-direction: column; 
+        gap: 25px;
+        padding: 0 25px;
+        list-style: none;
+    }
+
+    .navButton {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start; 
+        align-items: center;
+        text-decoration: none;
+        color: white;
+    }
+}
+
+/*===============================Responsividade mobile================================*/
+@media (min-width: 601px) and (max-width: 1047px) {
+    
+    .cabecario {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .ulCabecario {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 10px;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+    }
+
+    .navButton {
+        white-space: nowrap;
+    }
+}
